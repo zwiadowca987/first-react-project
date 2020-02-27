@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Seing project on GitHub Pages
+
+To see this project online open [https://zwiadowca987.github.io/first-react-project/public/index.html](https://zwiadowca987.github.io/first-react-project/public/index.html)
+
 ## Available Scripts
 
 In the project directory, you can run:
