@@ -23,6 +23,10 @@ function App() {
 
 			<Header/>
 			<Content/>
+			<br/>
+
+			<h1 style={myStyle}>Header</h1>
+			<br/>
 		</div>
 	);
 }
