@@ -1,7 +1,20 @@
 import React from 'react';
-import './App.css';
-class App extends React.Component {
+import {makeStyles} from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
+const myStyles = makeStyles({
+	button: {
+		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+		border: 0,
+		borderRadius: 3,
+		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+		color: 'white',
+		height: 48,
+		padding: '0 30px',
+	},
+});
+
+class App extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -46,11 +59,6 @@ class App extends React.Component {
 			// 	<Content/>
 			// 	<br/>
 			//
-			// 	<table>
-			// 		<tbody>
-			// 		<tr>{this.state.data.map((person, i) => <TableRow key={i} data={person}/>)}</tr>
-			// 		</tbody>
-			// 	</table>
 			// </div>
 
 			<Car/>
@@ -78,16 +86,6 @@ class App extends React.Component {
 // 	}
 // }
 //
-// class TableRow extends React.Component {
-// 	render() {
-// 		return (
-// 			<tr>
-// 				<td>{this.props.data.id}</td>
-// 				<td>{this.props.data.name}</td>
-// 				<td>{this.props.data.age}</td>
-// 			</tr>
-// 		)
-// 	}
 // }
 
 class Car extends React.Component {
@@ -97,8 +95,12 @@ class Car extends React.Component {
 			brand: "Ford",
 			model: "Mustang",
 			year: 1944,
-			color: "Red"
-		}
+			color: "Red",
+			username: '',
+			username2: '',
+			username3: '',
+			age: null,
+		};
 	}
 
 	present() {
@@ -115,9 +117,21 @@ class Car extends React.Component {
 		if (rand > 50) alert("Goal!");
 		else alert("Miss!");
 	};
+	changeUsername = (event) => this.setState({username: event.target.value});
+	changeUsername2 = (event) => this.setState({username2: event.target.value});
+	mySubmitHandler = (event) => {
+		event.preventDefault();
+		alert('You are submitting ' + this.state.username2);
+	};
+	changeData = (event) => {
+		let nam = event.target.name;
+		let val = event.target.value;
+		this.setState({[nam]: val})
+	};
 
 	render() {
 		//return <h1>I am CAR ;)</h1>
+
 		return (
 			<div id="container">
 				<h1>My {this.state.brand}</h1>
@@ -128,14 +142,47 @@ class Car extends React.Component {
 				</p>
 				<br/>
 
-				<button type="button" id="changeColor" onClick={this.changeColor}>Change Color</button>
+				{/*<button type="button" id="changeColor" onClick={this.changeColor}>Change Color</button>*/}
+				{/*<br/>*/}
+
+				{/*<button type="button" onClick={this.helloAnswear}>Hello There!</button>*/}
+				{/*<br/>*/}
+
+				{/*<button type="button" onClick={this.kick}>Kick Football</button>*/}
+				{/*<br/>*/}
+
+				<Button className={myStyles.button} onClick={this.changeColor}>Change Color</Button>
 				<br/>
 
-				<button type="button" onClick={this.helloAnswear}>Hello There!</button>
+				<Button className={myStyles.button} onClick={this.helloAnswear}>Hello There!</Button>
 				<br/>
 
-				<button type="button" onClick={this.kick}>Kick Football</button>
-				<br/>
+				<Button className={myStyles.button} onClick={this.kick}>Kick Football</Button>
+				<br/><br/><br/>
+
+				<form>
+					<h1>Hello {this.state.username}</h1>
+
+					<p>Enter your name: </p>
+
+					<input type='text' onChange={this.changeUsername}/>
+				</form>
+				<br/><br/>
+
+				<form onSubmit={this.mySubmitHandler}>
+					<h1>Hello {this.state.username2}</h1>
+					<p>Enter your name and submit:</p>
+					<input type='text' onChange={this.changeUsername2}/>
+					<input type='submit'/>
+				</form>
+
+				<form>
+					<h1>Hello {this.state.username3} {this.state.age}</h1>
+					<p>Enter your name and age:</p>
+					<input type='text' name='username3' onChange={this.changeData}/>
+					<br/>
+					<input type='number' name='age' onChange={this.changeData}/>
+				</form>
 
 			</div>
 		)
