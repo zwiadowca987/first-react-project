@@ -3,6 +3,9 @@ import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const myStyles = makeStyles({
+	container:{
+		// TODO
+	},
 	button: {
 		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
 		border: 0,
@@ -133,7 +136,7 @@ class Car extends React.Component {
 		//return <h1>I am CAR ;)</h1>
 
 		return (
-			<div id="container">
+			<div className={myStyles.container}>
 				<h1>My {this.state.brand}</h1>
 				<br/>
 
