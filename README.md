@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Seing project on GitHub Pages
 
-To see this project online open [https://zwiadowca987.github.io/first-react-project/public/index.html](https://zwiadowca987.github.io/first-react-project/public/index.html)
+To see this project online open [https://zwiadowca987.github.io/first-react-project/](https://zwiadowca987.github.io/first-react-project/)
 
 ## Available Scripts
 

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05a8f710-c540-45ed-a090-bbd3aab460d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="05a8f710-c540-45ed-a090-bbd3aab460d5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +87,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Readme update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme update" />
+    <MESSAGE value="#3 update" />
+    <option name="LAST_COMMIT_MESSAGE" value="#3 update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="163" width="815" height="683" key="#ESLint" timestamp="1582981592004">
