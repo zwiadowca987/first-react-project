@@ -110,7 +110,7 @@ class Car extends React.Component {
 	render() {
 		//return <h1>I am CAR ;)</h1>
 		return (
-			<div>
+			<div id="container">
 				<h1>My {this.state.brand}</h1>
 				<br/>
 
