@@ -94,7 +94,7 @@ class Car extends React.Component {
 	constructor(name) {
 		super(name);
 		this.state = {
-			brand: name,
+			brand: "Ford",
 			model: "Mustang",
 			year: 1944,
 			color: "Red"
@@ -105,7 +105,16 @@ class Car extends React.Component {
 		return 'I have a ' + this.state.brand;
 	}
 
-	changeColor = () => this.setState({color: "blue"});
+	changeColor = () => this.setState({color: "Blue"});
+	helloAnswear = () => alert("General Kenobi!");
+	kick = () => {
+		const min = 1;
+		const max = 100;
+		const rand = min + Math.random() * (max - min);
+		// this.setState({ random: this.state.random + rand });
+		if (rand > 50) alert("Goal!");
+		else alert("Miss!");
+	};
 
 	render() {
 		//return <h1>I am CAR ;)</h1>
@@ -114,14 +123,19 @@ class Car extends React.Component {
 				<h1>My {this.state.brand}</h1>
 				<br/>
 
-				<p>
-					This is a {this.state.color}
-					{this.state.model}
-					from {this.state.year}
+				<p id="text">
+					This is a {this.state.color} {this.state.model} from {this.state.year}
 				</p>
 				<br/>
 
-				<button type="button" onClick={this.changeColor}>Change Color</button>
+				<button type="button" id="changeColor" onClick={this.changeColor}>Change Color</button>
+				<br/>
+
+				<button type="button" onClick={this.helloAnswear}>Hello There!</button>
+				<br/>
+
+				<button type="button" onClick={this.kick}>Kick Football</button>
+				<br/>
 
 			</div>
 		)
