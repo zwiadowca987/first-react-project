@@ -1,21 +1,41 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
-const myStyles = makeStyles({
-	container:{
-		// TODO
-	},
-	button: {
-		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-		border: 0,
-		borderRadius: 3,
-		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-		color: 'white',
-		height: 48,
-		padding: '0 30px',
-	},
-});
+// const myStyles = makeStyles({
+// 	container:{
+// 		backgroundColor: 'black',
+// 	},
+// 	button: {
+// 		background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+// 		border: 0,
+// 		borderRadius: 3,
+// 		boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+// 		color: 'white',
+// 		height: 48,
+// 		padding: '0 30px',
+// 	},
+// });
+
+const Container = styled.div`
+	//
+`;
+
+const Button = styled.button`
+	background: rgb(7,147,0);
+	background: linear-gradient(45deg, rgba(7,147,0,1) 19%, rgba(83,232,255,1) 90%);
+	border: 0;
+	borderRadius: 3;
+	boxShadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+	color: white;
+	height: 60;
+	padding: 10px;
+	margin: 5px;
+	text-transform: uppercase;
+`;
+
+const H1 = styled.h1`
+	color: red;
+`;
 
 class App extends React.Component {
 	constructor(props) {
@@ -136,8 +156,8 @@ class Car extends React.Component {
 		//return <h1>I am CAR ;)</h1>
 
 		return (
-			<div className={myStyles.container}>
-				<h1>My {this.state.brand}</h1>
+			<Container>
+				<H1>My {this.state.brand}</H1>
 				<br/>
 
 				<p id="text">
@@ -154,17 +174,17 @@ class Car extends React.Component {
 				{/*<button type="button" onClick={this.kick}>Kick Football</button>*/}
 				{/*<br/>*/}
 
-				<Button className={myStyles.button} onClick={this.changeColor}>Change Color</Button>
+				<Button onClick={this.changeColor}>Change Color</Button>
 				<br/>
 
-				<Button className={myStyles.button} onClick={this.helloAnswear}>Hello There!</Button>
+				<Button onClick={this.helloAnswear}>Hello There!</Button>
 				<br/>
 
-				<Button className={myStyles.button} onClick={this.kick}>Kick Football</Button>
+				<Button onClick={this.kick}>Kick Football</Button>
 				<br/><br/><br/>
 
 				<form>
-					<h1>Hello {this.state.username}</h1>
+					<H1>Hello {this.state.username}</H1>
 
 					<p>Enter your name: </p>
 
@@ -173,21 +193,21 @@ class Car extends React.Component {
 				<br/><br/>
 
 				<form onSubmit={this.mySubmitHandler}>
-					<h1>Hello {this.state.username2}</h1>
+					<H1>Hello {this.state.username2}</H1>
 					<p>Enter your name and submit:</p>
 					<input type='text' onChange={this.changeUsername2}/>
 					<input type='submit'/>
 				</form>
 
 				<form>
-					<h1>Hello {this.state.username3} {this.state.age}</h1>
+					<H1>Hello {this.state.username3} {this.state.age}</H1>
 					<p>Enter your name and age:</p>
 					<input type='text' name='username3' onChange={this.changeData}/>
 					<br/>
 					<input type='number' name='age' onChange={this.changeData}/>
 				</form>
 
-			</div>
+			</Container>
 		)
 	}
 }
